@@ -1,0 +1,22 @@
+{
+  "name": "akamai-ccu-edgegrid-purge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elileon/akamai-ccu-edgegrid-purge.git"
+  },
+  "author": "Eli Leon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elileon/akamai-ccu-edgegrid-purge/issues"
+  },
+  "homepage": "https://github.com/elileon/akamai-ccu-edgegrid-purge#readme",
+  "dependencies": {
+    "edgegrid": "^2.0.7"
+  }
+}
