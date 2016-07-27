@@ -16,6 +16,7 @@ var Purger = function(config){
 Purger.prototype.invalidate = function(purgeObj, cb){
     if(!purgeObj){
         console.log("Purge object cannot be undefined");
+        return;
     }
 
     this.eg.auth({
@@ -27,7 +28,6 @@ Purger.prototype.invalidate = function(purgeObj, cb){
 
     this.eg.send(function(data, response) {
         data = JSON.parse(data);
-        console.log("Response: ", data);
         if(typeof cb === "function"){
             cb(data);
         }
@@ -35,6 +35,11 @@ Purger.prototype.invalidate = function(purgeObj, cb){
 };
 
 Purger.prototype.checkPurgeStatus = function(progressUri, cb){
+    if(!progressUri){
+        console.log("Progress uri cannot be empty");
+        return;
+    }
+
     this.eg.auth({
         path: progressUri,
         method: "GET"
