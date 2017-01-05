@@ -26,10 +26,10 @@ Purger.prototype.invalidate = function(purgeObj, cb){
         body: purgeObj
     });
 
-    this.eg.send(function(data, response) {
-        data = JSON.parse(data);
+    this.eg.send(function(error, response, body) {
+        body = JSON.parse(body);
         if(typeof cb === "function"){
-            cb(data);
+            cb(body);
         }
     });
 };
@@ -45,10 +45,10 @@ Purger.prototype.checkPurgeStatus = function(progressUri, cb){
         method: "GET"
     });
 
-    this.eg.send(function(data, response) {
-        data = JSON.parse(data);
+    this.eg.send(function(error, response, body) {
+        body = JSON.parse(body);
         if(typeof cb === "function"){
-            cb(data);
+            cb(body);
         }
     });
 };
